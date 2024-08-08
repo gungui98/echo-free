@@ -1,0 +1,103 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "name": "sample",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/sample.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--data_mode",
+                "echo",
+                "--data_dir",
+                "camus",
+                "--chamber_view",
+                "2CH",
+                "--batch_size",
+                "1",
+                "--log_interval",
+                "2000",
+                "--checkpoint",
+                "18",
+            ]
+        },
+        {
+            "name": "train camus 2ch",
+            "type": "python",
+            "request": "launch",
+            // run main.py
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            // add args --data_mode echo --data_dir camus --chamber_view 2CH --batch_size 16 --log_interval 1000
+            "args": [
+                "--data_mode",
+                "echo",
+                "--data_dir",
+                "camus",
+                "--chamber_view",
+                "2CH",
+                "--batch_size",
+                "16",
+                "--log_interval",
+                "2000",
+                "--checkpoint",
+                "1",
+            ]
+        },
+        {
+            "name": "train echonet 2ch",
+            "type": "python",
+            "request": "launch",
+            // run main.py
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            // add args --data_mode echo --data_dir camus --chamber_view 2CH --batch_size 16 --log_interval 1000
+            "args": [
+                "--data_mode",
+                "echo",
+                "--data_dir",
+                "echonet",
+                "--chamber_view",
+                "2CH",
+                "--batch_size",
+                "16",
+                "--log_interval",
+                "1",
+                "--mask_condition"
+            ]
+        },
+        {
+            "name": "train dummy",
+            "type": "python",
+            "request": "launch",
+            // run main.py
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            // add args --data_dir server --image_size 64 --batch_size 16 --log_interval 1000
+            "args": [
+                "--data_mode",
+                "dummy",
+                "--data_dir",
+                "camus",
+                "--image_size",
+                "128",
+                "--batch_size",
+                "12",
+                "--log_interval",
+                "5000",
+                "--diffusion_steps",
+                "1000",
+            ]
+        },
+        
+    ]
+}
